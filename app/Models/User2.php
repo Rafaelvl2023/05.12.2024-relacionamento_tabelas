@@ -9,13 +9,7 @@ class User2 extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $table = 'users2'; // Nome da tabela no banco de dados
 
-    /**
-     * Relacionamento muitos-para-muitos com grupos.
-     */
-    public function groups()
-    {
-        return $this->belongsToMany(Group::class, 'user_group');
-    }
+    protected $fillable = ['name', 'email', 'password']; // Colunas que podem ser preenchidas em massa
 }

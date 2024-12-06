@@ -4,15 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateUsersTableV2 extends Migration
 {
     /**
-     * Run the migrations.
+     * Execute as migrações.
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id(); // Cria a coluna 'id' como chave primária
+        Schema::create('users2', function (Blueprint $table) {
+            $table->id(); // Chave primária
             $table->string('name'); // Nome do usuário
             $table->string('email')->unique(); // Email único
             $table->string('password'); // Senha do usuário
@@ -21,10 +21,10 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverta as migrações.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users2');
     }
-};
+}
